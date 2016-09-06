@@ -1,0 +1,11 @@
+CC = g++
+CFLAGS = -O2 -Wall
+STD = -std=c++11
+LFLAGS = -Llibharu/src/
+INCLUDE = libharu/include
+LIBS = -lhpdfs -lz -lm -lstdc++
+
+pdfExample: pdfExample.cpp $(INCLUDE)/hpdf.h
+$(CC) $(CFLAGS) $(STD) -o pdfExample pdfExample.cpp $(LFLAGS) -I$(INCLUDE) $(LIBS)
+clean:
+	rm -f pdfExample *.o
