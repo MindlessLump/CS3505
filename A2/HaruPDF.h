@@ -16,6 +16,6 @@ class HaruPDF {
 public:
     HaruPDF(); // Default contructor
     HaruPDF(char fname[256]); // Constructor with given filename
-    void addText(char buf[2], float rad1, float rad2, float x, float y);
+    void addText(float cosine, float sine, float x, float y, char buf[2]);
     void saveAndClose();
-}
+};

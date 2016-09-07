@@ -1,0 +1,5 @@
+CC = g++
+CFLAGS = -O2 -Wall -std=c++11
+LFLAGS = -Llibharu/src/
+INCLUDE = libharu/include
+LIBS = -lhpdfs -lz -lm -lstdc++

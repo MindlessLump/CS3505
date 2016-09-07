@@ -40,14 +40,14 @@ HaruPDF::HaruPDF(char fname[256]) {
     HPDF_Page_SetFontAndSize (_page, _font, 30);
 }
 
-HaruPDF::addText(char buf[2], float rad1, float rad2, float x, float y) {
+void HaruPDF::addText(float cosine, float sine, float x, float y, char buf[2]) {
     HPDF_Page_SetTextMatrix (_page,
-                            cos(rad1), sin(rad1), -sin(rad1), cos(rad1),
+                            cosine, sine, -sine, cosine,
                             x, y);
     HPDF_Page_ShowText (_page, buf);
 }
 
-HaruPDF::saveAndClose() {
+void HaruPDF::saveAndClose() {
     HPDF_Page_EndText (_page);
     HPDF_SaveToFile (_pdf, _fname);
     HPDF_Free (_pdf);

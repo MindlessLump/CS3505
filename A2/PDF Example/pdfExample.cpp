@@ -51,13 +51,15 @@ int main (int argc, char **argv)
     HPDF_Page_SetGrayStroke (page, 0);
 
     /* text along a circle */
-    angle2 = 180;
+    angle2 = 90;
 
     HPDF_Page_BeginText (page);
     // Their example sets font twice. Probably some kind of mistake. Fix it or do what they do.
     font = HPDF_GetFont (pdf, "Courier-Bold", NULL);
     HPDF_Page_SetFontAndSize (page, font, 30);
     // Place characters one at a time on the page.
+
+    float radius = 80;
     for (i = 0; i < strlen (SAMP_TXT); i++) {
         char buf[2];
         float x;
@@ -73,8 +75,8 @@ int main (int argc, char **argv)
 
         // The position of the character depends on the center point
         // plus the angle and the radius.
-        x = 210 + cos(rad2) * 150;
-        y = 300 + sin(rad2) * 150;
+        x = 210 + cos(rad2) * radius;
+        y = 300 + sin(rad2) * radius;
 
         // This ugly function defines where any following text will be placed
         // on the page. The cos/sin stuff is actually defining a 2D rotation
@@ -88,6 +90,10 @@ int main (int argc, char **argv)
         buf[1] = 0;
         HPDF_Page_ShowText (page, buf);
         angle2 -= 10.0; // change the angle around the circle
+        radius += 1.0;
+        if (i > strlen (SAMP_TXT) / 2) {
+            angle2 += 5.0;
+        }
     }
 
     HPDF_Page_EndText (page);
