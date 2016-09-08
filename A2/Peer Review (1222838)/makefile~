@@ -1,0 +1,3 @@
+LIBHARU = ../libharu
+HaruPDF.o: HaruPDF.cpp HarPDF.h $(Libharu)/include/hpdf.h
+	g++ -Wall -std=c++11 -L$(LIBHARU)/src -I$(LIBHARU)/include -c HarPDF.cpp

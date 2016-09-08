@@ -18,7 +18,7 @@ HaruPDF::HaruPDF() {
     _pdf = HPDF_New (NULL, NULL);
     _page = HPDF_AddPage (_pdf);
     HPDF_Page_SetSize (_page, HPDF_PAGE_SIZE_A5, HPDF_PAGE_PORTRAIT);
-    _font = HPDF_GetFont (_pdf, "Helvetica", NULL);
+    _font = HPDF_GetFont (_pdf, "Courier-Bold", NULL);
     HPDF_Page_SetTextLeading (_page, 20);
     HPDF_Page_SetGrayStroke (_page, 0);
 
@@ -32,7 +32,7 @@ HaruPDF::HaruPDF(char fname[256]) {
     _pdf = HPDF_New (NULL, NULL);
     _page = HPDF_AddPage (_pdf);
     HPDF_Page_SetSize (_page, HPDF_PAGE_SIZE_A5, HPDF_PAGE_PORTRAIT);
-    _font = HPDF_GetFont (_pdf, "Helvetica", NULL);
+    _font = HPDF_GetFont (_pdf, "Courier-Bold", NULL);
     HPDF_Page_SetTextLeading (_page, 20);
     HPDF_Page_SetGrayStroke (_page, 0);
 

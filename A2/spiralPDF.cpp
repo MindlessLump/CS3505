@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
     const int strLen = strlen(INPUT_TXT);
 
     // Start text spiral calculations
-    Spiral spiral(210.0, 310.0, 100.0);
+    Spiral spiral(210.0, 310.0, 90.0);
 
     // Iterate through input string and place text
     for (i = 0; i < strLen; i++) {
@@ -36,6 +36,9 @@ int main(int argc, char **argv) {
         // Update position
         ++spiral;
     }
+
+    // Finish up and create PDF
+    pdf.saveAndClose();
 
     return 0;
 }

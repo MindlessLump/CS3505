@@ -63,8 +63,8 @@ double Spiral::get_text_sine() {
 // Overrides the prefix ++ operator
 Spiral& Spiral::operator++() {
     // Rotate position and slightly increase radius
-    angle2 -= 8.0;
-    radius += 1.0;
+    angle2 -= 7.5;
+    radius += 0.8;
     // Update dependent variables accordingly
     rad1 = (angle2 - 90) / 180 * M_PI;
     rad2 = angle2 / 180 * M_PI;
